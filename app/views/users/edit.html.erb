@@ -18,13 +18,6 @@
   <% @user.errors.full_messages_for(:password).each do |message| %>
   <div><%= message %></div>
   <% end %>
-
-  <%
-=begin%>
- <%= form.check_box(:accept) %>
-  <%= form.label(:accept, "I have read and agree with the Privacy Policy and User Agreement") %><br><br> 
-<%
-=end%>
   
   <%= form.submit("Submit")%>
 <% end %>
