@@ -19,7 +19,9 @@
 <%
 =end%>
 
-<%= form_tag('/users') do %>
+<%
+=begin%>
+ <%= form_tag('/users') do %>
   <%= label_tag(:username, "Username:") %>
   <%= text_field_tag(:username) %>
 
@@ -31,4 +33,22 @@
 
   <%= submit_tag("Submit") %>
 
+<% end %> 
+<%
+=end%>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label(:username, "Username: ")%><br>
+  <%= form.text_field :username, placeholder: "Eg. JohnDoe123" %><br>
+
+  <%= form.label(:email, "Email: ")%><br>
+  <%= form.email_field :email, placeholder: "john@doe.com"%><br>
+
+  <%= form.label(:password, "Password: ")%><br>
+  <%= form.password_field :password, placeholder: "*****"%><br><br>
+
+  <%= form.check_box(:accept) %>
+  <%= form.label(:accept, "I have read and agree with the Privacy Policy and User Agreement") %><br><br>
+  
+  <%= form.submit("Submit")%>
 <% end %>
