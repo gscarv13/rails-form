@@ -1,5 +1,6 @@
 <h1>Sign up!</h1>
 
+
 <%= form_with model: @user do |form| %>
   <%= form.label(:username, "Username: ")%><br>
   <%= form.text_field :username, placeholder: "Eg. JohnDoe123" %><br>
@@ -12,3 +13,7 @@
 
   <%= form.submit("Submit")%>
 <% end %>
+
+
+
+
